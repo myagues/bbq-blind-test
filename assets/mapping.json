@@ -1,6 +1,6 @@
 [
-  {"id": "a1", "animal": "Coca-Cola", "correctEnvironment": "Blue"},
+  {"id": "a1", "animal": "Coca-Cola Zero Cafeína", "correctEnvironment": "Blue"},
   {"id": "a2", "animal": "Coca-Cola Zero", "correctEnvironment": "Green"},
   {"id": "a3", "animal": "Coca-Cola Light", "correctEnvironment": "Red"},
-  {"id": "a4", "animal": "Coca-Cola Zero Cafeína", "correctEnvironment": "Yellow"}
+  {"id": "a4", "animal": "Coca-Cola", "correctEnvironment": "Yellow"}
 ]
