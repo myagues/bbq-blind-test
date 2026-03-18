@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Match Animals to Environments</title>
+    <link rel="stylesheet" href="assets/styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <h1>Match Animals to Environments</h1>
+      <p class="subtitle">Drag the animals to align with the environments</p>
+    </header>
+
+    <main class="container">
+      <section class="panel">
+        <h2 class="sr-only">Animals (draggable)</h2>
+        <ul id="animals" class="list animals" aria-label="Animals list"></ul>
+      </section>
+
+      <section class="panel">
+        <h2 class="sr-only">Environments</h2>
+        <ul id="environments" class="list environments" aria-label="Environments list"></ul>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div id="result" class="result" aria-live="polite"></div>
+      <div class="controls">
+        <button id="shuffleBtn" class="btn">Shuffle</button>
+        <button id="checkBtn" class="btn primary">Check</button>
+      </div>
+    </footer>
+
+    <script src="assets/main.js"></script>
+  </body>
+</html>

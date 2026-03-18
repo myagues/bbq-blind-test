@@ -1,0 +1,8 @@
+[
+  {"id":"a1","animal":"Penguin","correctEnvironment":"Antarctica"},
+  {"id":"a2","animal":"Camel","correctEnvironment":"Desert"},
+  {"id":"a3","animal":"Frog","correctEnvironment":"Wetlands"},
+  {"id":"a4","animal":"Eagle","correctEnvironment":"Mountains"},
+  {"id":"a5","animal":"Dolphin","correctEnvironment":"Ocean"},
+  {"id":"a6","animal":"Elephant","correctEnvironment":"Savanna"}
+]
