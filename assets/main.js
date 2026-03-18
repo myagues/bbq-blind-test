@@ -13,7 +13,7 @@ function shuffle(array) {
 
 function createListItem(text, id) {
   const li = document.createElement('li');
-  li.className = 'item';
+  li.className = 'item flex min-h-14 items-center justify-center rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 font-bold text-base focus:outline-teal-700 focus:outline-offset-1';
   li.tabIndex = 0;
   li.dataset.id = id;
   li.textContent = text;
@@ -25,7 +25,7 @@ function renderEnvironments(envs) {
   envList.innerHTML = '';
   envs.forEach((env) => {
     const li = document.createElement('li');
-    li.className = 'item env-item';
+    li.className = 'item env-item flex min-h-14 items-center justify-center rounded-xl border border-amber-200 bg-amber-50 px-4 py-3.5 font-bold text-base text-amber-900';
     li.textContent = env;
     envList.appendChild(li);
   });
@@ -37,9 +37,15 @@ function renderAnimals(items) {
   items.forEach((it) => animals.appendChild(createListItem(it.animal, it.id)));
 }
 
+let sortableInstance = null;
+
 function initSortable() {
   const list = document.getElementById('animals');
-  new Sortable(list, {
+  // Destroy previous instance if it exists
+  if (sortableInstance) {
+    sortableInstance.destroy();
+  }
+  sortableInstance = Sortable.create(list, {
     animation: 150,
     ghostClass: 'ghost',
     swapThreshold: 0.7,
@@ -71,7 +77,8 @@ async function main() {
       shuffle(animalsData);
       renderAnimals(animalsData);
       initSortable();
-      document.getElementById('result').textContent = '';
+      document.getElementById('result').className = 'text-center font-bold text-large text-white';
+      document.getElementById('result').textContent = '??';
     });
 
     document.getElementById('checkBtn').addEventListener('click', () => {
@@ -85,7 +92,7 @@ async function main() {
       });
       const resultEl = document.getElementById('result');
       resultEl.textContent = `${correctCount} / ${mapping.length} correct`;
-      resultEl.classList.add('large');
+      resultEl.className = 'text-center font-bold text-large text-teal-700';
     });
 
   } catch (err) {

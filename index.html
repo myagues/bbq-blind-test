@@ -4,32 +4,74 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Match Animals to Environments</title>
-    <link rel="stylesheet" href="assets/styles.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
+    <style>
+      .ghost {
+        opacity: 0.6;
+      }
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+    </style>
   </head>
-  <body>
-    <header class="header">
-      <h1>Match Animals to Environments</h1>
-      <p class="subtitle">Drag the animals to align with the environments</p>
+  <body class="bg-white text-gray-900 font-system antialiased">
+    <!-- Header: Sticky top with flexbox -->
+    <header class="sticky top-0 z-10 border-b border-gray-100 bg-white px-4 py-4 text-center sm:py-6">
+      <h1 class="text-2xl font-bold sm:text-3xl">Match Flavours to Colours</h1>
     </header>
 
-    <main class="container">
-      <section class="panel">
-        <h2 class="sr-only">Animals (draggable)</h2>
-        <ul id="animals" class="list animals" aria-label="Animals list"></ul>
+    <!-- Main Container: Flex layout that switches to grid on larger screens -->
+    <main class="flex flex-row mx-auto mt-4 max-w-2xl gap-6">
+      <!-- Flavours Section -->
+      <section class="flex w-full">
+        <h2 class="sr-only">Flavours (draggable)</h2>
+        <ul
+          id="animals"
+          class="flex flex-col w-full gap-4"
+          aria-label="Flavours list"
+        ></ul>
       </section>
 
-      <section class="panel">
-        <h2 class="sr-only">Environments</h2>
-        <ul id="environments" class="list environments" aria-label="Environments list"></ul>
+      <!-- Colours Section -->
+      <section class="flex w-full">
+        <h2 class="sr-only">Colours</h2>
+        <ul
+          id="environments"
+          class="flex flex-col w-full gap-4"
+          aria-label="Colours list"
+        ></ul>
       </section>
     </main>
 
-    <footer class="footer">
-      <div id="result" class="result" aria-live="polite"></div>
-      <div class="controls">
-        <button id="shuffleBtn" class="btn">Shuffle</button>
-        <button id="checkBtn" class="btn primary">Check</button>
+    <!-- Footer: Fixed on mobile, static on desktop with flexbox layout -->
+    <footer class="flex flex-col items-center gap-4 mx-auto mt-12">
+      <div
+        id="result"
+        class="text-center font-bold text-large text-white"
+        aria-live="polite"
+      >??</div>
+      <div class="flex gap-2 justify-center">
+        <button
+          id="shuffleBtn"
+          class="rounded-lg border border-gray-300 bg-white px-4 py-3 font-semibold text-gray-900 transition-colors hover:bg-gray-50"
+        >
+          Shuffle
+        </button>
+        <button
+          id="checkBtn"
+          class="rounded-lg border-0 bg-teal-700 px-4 py-3 font-semibold text-white transition-colors hover:bg-teal-800"
+        >
+          Check
+        </button>
       </div>
     </footer>
 
